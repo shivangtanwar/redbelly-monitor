@@ -33,10 +33,9 @@ Make sure the following tech stack are available on your system:
 - **Prometheus**
 - **Grafana**
 - **systemd**
-## Automatic Installation (Recommended)
-
-<---Under Development-->
-## Manual Installation
+## Automatic Installation
+**<---Under Development-->**
+## Manual Installation (Recommended)
 
 
 #### 💉 1. Prequisites Installation (optional)
