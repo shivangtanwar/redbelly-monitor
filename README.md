@@ -11,7 +11,7 @@ One stop solution to monitor your Redbelly Node at a single place using Grafan D
 ![App Screenshot](https://raw.githubusercontent.com/shivangtanwar/redbelly-monitor/refs/heads/main/screenshots/Dashboard-ss.png)
 
 
-## Features
+## 🪶 Features
 
 - **Resource Usage Tracking** 💻
   - CPU 
@@ -26,16 +26,25 @@ One stop solution to monitor your Redbelly Node at a single place using Grafan D
 - **Script Health Status** ✅
 
 
-## Prequisites
+## 💪 Redbelly Server Recommendation
+
+![ParentHost](https://media.licdn.com/dms/image/v2/D5622AQHlqR1iNUQYuw/feedshare-shrink_2048_1536/B56ZQyoqhLGoAo-/0/1736016309450?e=1738800000&v=beta&t=wqGsNRHZTDAV82S6O0dU4g58hrAzE4bx8redfc0LkkE)
+
+- **5.7 Ghz CPU, DDR5 RAM, NVMe Storage & 10Gbps Port**
+- **Checkout VPS-R Now : [ParentHost VPS Hosting](https://parenthost.com/vps-hosting)**
+
+
+
+## 🧵 Prequisites
 
 Make sure the following tech stack are available on your system:
 - **NodeJs (v14.x)+**
 - **Prometheus**
 - **Grafana**
 - **systemd**
-## Automatic Installation
+## 🅰️ Automatic Installation
 **<---Under Development-->**
-## Manual Installation (Recommended)
+## Ⓜ️ Manual Installation (Recommended)
 
 
 #### 💉 1. Prequisites Installation (optional)
