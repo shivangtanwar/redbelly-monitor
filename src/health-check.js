@@ -54,27 +54,6 @@ app.get('/network/count', async (req, res) => {
         // Respond with an error
         res.status(500).json({ error: error.message });
     }
-});app.get('/network/count', async (req, res) => {
-    try {
-        // Fetch block count from the API
-        const response = await fetch('https://cdn.testnet.routescan.io/api/evm/153_2/sync');
-        const data = await response.json();
-
-        if (data && data.blocksCount !== undefined) {
-            const blockCount = data.blocksCount;
-
-            // Update Prometheus metric
-            networkBlockCountGauge.set(blockCount);
-
-            // Respond with the block count
-            res.json({ blocksCount: blockCount });
-        } else {
-            throw new Error('Invalid response from API');
-        }
-    } catch (error) {
-        // Respond with an error
-        res.status(500).json({ error: error.message });
-    }
 });
 
 //Balance Fetch Custom Metrics
