@@ -168,7 +168,7 @@ sudo ufw reload
 ## 🎉 7. Setup Monitoring Dashboard
 
 - Default login details for Grafana will be **admin** for both username and password.
-- Firstly, add prometheus as data source at ```http://<your-server-ip>/connections/datasources/new```. Use prometheus server URL as ```http://<your-server-ip>:9090```.
+- Firstly, add prometheus as data source at ```http://<your-server-ip>:3000/connections/datasources/new```. Use prometheus server URL as ```http://<your-server-ip>:9090```.
 - Go to ```https://<your-server-ip>:3000/dashboards```
 
 - On right side, click "New" & then click "Import"
