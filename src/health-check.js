@@ -33,27 +33,33 @@ const networkBlockCountGauge = new client.Gauge({
 });
 register.registerMetric(networkBlockCountGauge);
 
-app.get('/network/count', async (req, res) => {
+async function updateNetworkHeight() {
     try {
-        // Fetch block count from the API
         const response = await fetch('https://cdn.testnet.routescan.io/api/evm/153_2/sync');
         const data = await response.json();
 
-        if (data && data.blocksCount !== undefined) {
-            const blockCount = data.blocksCount;
+        if (data && data.blocksCount) {
+            const blockHeight = data.blocksCount;
+            networkBlockCountGauge.set(blockHeight); // Update Prometheus metric
 
-            // Update Prometheus metric
-            networkBlockCountGauge.set(blockCount);
-
-            // Respond with the block count
-            res.json({ blocksCount: blockCount });
+            console.log(`Network Height Updated: ${blockHeight}`);
         } else {
             throw new Error('Invalid response from API');
         }
     } catch (error) {
-        // Respond with an error
-        res.status(500).json({ error: error.message });
+        console.error(`Failed to update Network Height: ${error.message}`);
     }
+}
+
+// Schedule to run every 5 minutes (300000 ms)
+setInterval(updateNetworkHeight, 300000);
+
+// Initial update at server startup
+updateNetworkHeight();
+
+// Endpoint to expose balance (optional, as it's now periodic)
+app.get('/network-height', (req, res) => {
+    res.json({ message: 'Network Height is updated every 5 minutes and available in /metrics' });
 });
 
 //Balance Fetch Custom Metrics
